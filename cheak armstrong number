@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class ArmstrongNumber0 {
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        do {
+            System.out.print("Enter your Number: ");
+            int num = input.nextInt();
+            int d = num;
+            int length = 0;
+            while (d != 0) {
+                length++;
+                d /= 10;
+            }
+            int d2 = num;
+            int rem;
+            int arm = 0;
+            while (d2 != 0) {
+                rem = d2 % 10;
+                int mul = 1;
+                for (int i = 1; i <= length; i++) {
+                    mul = mul * rem;
+                }
+                arm = arm + mul;
+                d2 /= 10;
+            }
+            if (arm == num) {
+                System.out.println(num + " is 'Armstrong number'");
+            } else {
+                System.out.println(num + " is 'Not 'Armstrong number'");
+            }
+        }while(true);
+    }
+}
