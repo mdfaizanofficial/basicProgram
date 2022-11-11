@@ -1,0 +1,23 @@
+import  java.util.Scanner;
+public class PalindromeNumberCheak {
+    public static void main(String[] args){
+        Scanner input = new Scanner (System.in);
+        do {
+            System.out.println("<-------------->");
+            System.out.print("Enter your Number: ");
+            int num = input.nextInt();
+            int dublicate = num;
+            int rem, rev = 0;
+            while (dublicate != 0) {
+                rem = dublicate % 10;
+                rev = rev * 10 + rem;
+                dublicate /= 10;
+            }
+            if (rev == num) {
+                System.out.println(num + " is 'Palindrome'");
+            } else {
+                System.out.println(num + " is not 'Palindrome'");
+            }
+        }while (true);
+    }
+}
